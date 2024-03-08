@@ -55,9 +55,9 @@ public class Driver {
                         // assign your grid server address
                         String gridAddress = "100.24.34.37";
                         URL url = new URL("http://"+ gridAddress + ":4444/wd/hub");
-                        ChromeOptions chromeOptions = new ChromeOptions();
-                        chromeOptions.addArguments("--start-maximized");
-                        driverPool.set(new RemoteWebDriver(url, chromeOptions));
+                        DesiredCapabilities desiredCapabilities =new DesiredCapabilities();
+                        desiredCapabilities.setBrowserName("chrome");
+                        driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
                         //driverPool.set(new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"),desiredCapabilities));
 
                     } catch (Exception e) {
